@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="./js/jquery-3.3.1.min.js"></script>
+      <script src="./js/bootstrap.bundle.min.js"></script>
+      <script src="./js/bootstrap.min.js"></script>
+      <script src="./js/moment-with-locales.min.js"></script>
+      <script src="./js/jquery.touchSwipe.min.js"></script>
+      <script src="./js/bootstrap-datetimepicker.min.js"></script>
+      <script src="./js/jquery-calendar.min.js"></script>
+      <script src="./js/pouchdb.min.js"></script>
+      <script src="/js/slick.min.js"></script>
+      <link rel="stylesheet" href="./css/bootstrap.rtl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" >
+      <link rel="stylesheet" href="./css/jquery-calendar.min.css">
+      <link rel="stylesheet" href="./fontawesome/css/all.min.css"/>
+      <link rel="stylesheet" href="./css/jquery-ui.css">
+      <link rel="stylesheet" href="./css/slick.css">
+      <link rel="stylesheet" href="./css/style.css" >
+      <link rel="stylesheet" href="./css/main.css">
+      <title>أداء : بوابة الموظفين</title>
+      <style>
+        .chart01 {
+            position: absolute;
+            top: 500px;
+            left: 20px;
+            }
+            .chart02 {
+            position: absolute;
+            left: 0px;
+            top: 50px;
+            width: 300px;
+            -webkit-perspective: 600;
+            -webkit-perspective-origin: center;
+            }
+            .caption {
+                font-family: Lato,sans-serif;
+                color: #222;
+                font-size: 12px;
+                font-weight: 600;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                line-height: 300px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                white-space: nowrap;
+                width: 300px;
+            }
+
+            .chart02 .circle01 {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+            .chart02 .circle02 {
+                position: absolute;
+                top: 20px;
+                left: 0px;
+            }
+            .chart02 .circle03 {
+                position: absolute;
+                top: 50px;
+                left: 0px;
+            }
+
+
+            .chart03 {
+            position: absolute;
+            left: 400px;
+            top: 50px;
+            }
+
+            .chart03 .circle01,
+            .chart03 .circle02,
+            .chart03 .circle03,
+            .chart03 .frame {
+                position: absolute;
+            }
+      </style>
+    </head>
+    
+    <body>
+        
+        <div class="chart01">
+            <canvas id="myChart" width="1200" height="400"></canvas>
+          </div>
+            
+          <div class="chart02">
+            <canvas id="pieChart" class="circle01" width="300" height="300"></canvas>
+            <canvas id="pieChart2" class="circle02" width="300" height="260"></canvas>
+            <canvas id="pieChart3" class="circle03" width="300" height="200"></canvas>
+            <div class="caption"> Style 1 </div>
+          </div>
+            
+        
+
+
+        
+        <script src="./js/custom.js"></script>
+        <script src="./js/calendar.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>
+        <script>
+            var data = {
+                labels : ["January","February","March","April","May","June","July"],
+                datasets : [
+                    {
+                        fillColor : "rgba(155,210,230,.05)",
+                        strokeColor : "rgb(115,180,190)",
+                        pointColor : "#424647",
+                        pointStrokeColor : "rgb(115,180,190)",
+                        data : [65,59,90,41,56,55,40]
+                    },
+                    {
+                        fillColor : "rgba(235,145,145,.05)",
+                        strokeColor : "rgb(180,100,100)",
+                        pointColor : "#424647",
+                        pointStrokeColor : "rgb(180,100,100)",
+                        data : [28,48,40,19,96,27,100]
+                    },
+                {
+                        fillColor : "rgba(220,240,145,.05)",
+                        strokeColor : "rgb(180,185,135)",
+                        pointColor : "#424647",
+                        pointStrokeColor : "rgb(180,185,135)",
+                        data : [8,35,35,1,78,45,80]
+                    }
+                ]
+            }
+
+
+            var ctx = document.getElementById("myChart").getContext("2d");
+            new Chart(ctx).Line(data, {	
+                scaleOverlay : false,
+                scaleOverride : true,	
+                scaleSteps : 10,
+                scaleStepWidth : 10,
+                scaleStartValue : 0,
+
+                scaleLineColor : "rgba(0,0,0,.25)",	
+                scaleLineWidth : 1,
+                
+                scaleShowLabels : true,
+                scaleLabel : "<%=value%>",
+                scaleFontFamily : "'Lato'",	
+                scaleFontSize : 12,	
+                scaleFontStyle : "800",
+                scaleFontColor : "#222",	
+
+                scaleShowGridLines : true,
+                scaleGridLineColor : "rgba(0,0,0,.1)",
+                scaleGridLineWidth : 1,	
+
+                bezierCurve : true,
+
+                pointDot : true,
+                pointDotRadius : 5,
+                pointDotStrokeWidth : 1,
+
+                datasetStroke : true,
+                datasetStrokeWidth : 1,
+                datasetFill : true,
+
+                animation : true,
+                animationSteps : 120,
+                animationEasing : "easeOutQuart",
+                onAnimationComplete : null
+            });
+
+
+
+
+
+
+
+
+
+            var pie = document.getElementById("pieChart").getContext("2d");
+            new Chart(pie).Doughnut([
+                { value: 50, color: "rgba(180,100,100,1)" },
+                { value: 50, color: '#424647' }
+            ], {
+            segmentShowStroke: false,
+            percentageInnerCutout : 90,
+            });
+
+            var pie2 = document.getElementById("pieChart2").getContext("2d");
+            new Chart(pie2).Doughnut([
+                { value: 80, color: "rgba(180,100,100,.75)" },
+                { value: 20, color: '#424647' }
+            ], {
+            segmentShowStroke: false,
+            percentageInnerCutout : 80,
+            });
+
+            var pie3 = document.getElementById("pieChart3").getContext("2d");
+            new Chart(pie3).Doughnut([
+                { value: 90, color: "rgba(180,100,100,.5)" },
+                { value: 10, color: '#424647' }
+            ], {
+            segmentShowStroke: false,
+            percentageInnerCutout : 96,
+            });
+
+
+
+
+            var dn1 = document.getElementById("dnChart1").getContext("2d");
+            new Chart(dn1).Doughnut([
+                { value: 20, color: "rgba(180,185,135,.5)" },
+                { value: 80, color: 'rgba(0,0,0,0)' }], {
+                segmentShowStroke : false,
+                percentageInnerCutout : 85,
+            });
+
+            var dn2 = document.getElementById("dnChart2").getContext("2d");
+            new Chart(dn2).Doughnut([
+                { value: 20, color: "rgba(180,100,100,0)" },
+                { value: 50, color: "rgba(180,185,135,1)" },
+                { value: 30, color: 'rgba(0,0,0,0)' }], {
+                segmentShowStroke : false,
+                percentageInnerCutout : 70,
+            });
+
+
+            var dn3 = document.getElementById("dnChart3").getContext("2d");
+            new Chart(dn3).Doughnut([
+                { value: 70, color: "rgba(180,100,100,0)" },
+                { value: 30, color: "rgba(180,185,135,.7)" }], {
+                segmentShowStroke : false,
+                percentageInnerCutout : 78,
+            });
+
+            var dn4 = document.getElementById("dnChart4").getContext("2d");
+            new Chart(dn4).Pie([
+            { value: 20, color: "rgba(0,0,0,0)" },	
+            { value: 50, color: "rgba(0,0,0,0)" },
+                { value: 30, color: "rgba(0,0,0,0)" }], {
+                segmentStrokeColor : "#424647",
+                segmentStrokeWidth : 1
+            });
+        </script>
+    </body>
+</html>

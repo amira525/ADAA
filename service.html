@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ar" class="main_tag" dir="rtl">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./js/jquery-3.3.1.min.js"></script>
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/moment-with-locales.min.js"></script>
+        <script src="./js/jquery.touchSwipe.min.js"></script>
+        <script src="./js/bootstrap-datetimepicker.min.js"></script>
+        <script src="./js/jquery-calendar.min.js"></script>
+        <script src="./js/pouchdb.min.js"></script>
+        <script src="/js/slick.min.js"></script>
+        <link rel="stylesheet" href="./css/bootstrap.rtl.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="./css/jquery-calendar.min.css">
+        <link rel="stylesheet" href="./fontawesome/css/all.min.css"/>
+        <link rel="stylesheet" href="./css/jquery-ui.css">
+        <link rel="stylesheet" href="./css/slick.css">
+        <link rel="stylesheet" href="./css/style.css" >
+        <link rel="stylesheet" href="./css/main.css">
+        <title>أداء : بوابة الموظفين</title>
+      </head>
+    
+    <body>
+        
+        <!-- start service -->
+        <section class="service">
+            <!-- start navbar -->
+            <section class="mian-navbar">
+                <div class="container-fluid">
+                  <input type="checkbox" id="nav-check">
+                  <div class="nav-image">
+                      <img src="/image/photo_logo.jpg" />
+                  </div>
+                  <div class="nav-btn">
+                    <label for="nav-check">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </label>
+                  </div>
+                  <div class="all-links">
+                    <nav>
+                      <ul>
+                        <li><a href="#"><i class="fas fa-home"></i><span>الرئيسية</span></a></li>
+                        <li><a href="#"><i class="far fa-address-card"></i><span>علاقات العملاء</span></a></li>
+                        <li><a href="#"><i class="fas fa-cogs"></i><span>خدماتى</span></a></li>
+                        <li><a href="#"><i class="fas fa-clipboard-list"></i><span>مهامى</span></a></li>
+                        <li><a href="#"><i class="fas fa-clipboard-check"></i><span>طلباتى</span></a></li>
+                        <li class="last_child"><a href="./my-team.html"><i class="fas fa-users"></i><span>فريقى</span></a></li>
+                      </ul>
+                      <a class="icon-left" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
+                        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
+                      </svg></a>
+                    </nav>
+                  </div>
+                </div>
+            </section>
+            <!-- end navbar -->
+            <div class="container">
+                <ul id="all_service">
+                    <li id="it-service">خدمات تقنية المعلومات</li>
+                    <li class="inactive" id="hr-service">خدمات الموارد بشرية</li>
+                    <li class="inactive" id="lege-service">خدمات الادراة القانونية</li>
+                    <li class="inactive" id="strategic-service">خدمات الادراة الاستراتيجية</li>
+                    <li class="inactive" id="markting-service">خدمات ادارة التسويق</li>
+                    <li class="inactive last_child" id="training-service">خدمات ادارة التدريب</li>
+                </ul>
+                <hr class="border-item">
+                <div class="all-services">
+                    <div class="it-service" id="it-service-screen">
+                        <div class="row">
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-laptop-code"></i></span>
+                                    <h3>خدمات تقنية المعلومات</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-fill-check" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"/>
+                                      </svg></span>
+                                    <h3>أمن المعلومات</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr-service" id="hr-service-screen">
+                        <div class="row">
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-building"></i></span>
+                                    <h3>تعديل معلومات البنك</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-file-invoice-dollar"></i></span>
+                                    <h3>خطاب تثبيت راتب</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-restroom"></i></span>
+                                    <h3>طلبات المرافقين</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
+                                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755z"/>
+                                      </svg></span>
+                                    <h3>مطالبة</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-file-invoice-dollar"></i></span>
+                                    <h3>طلب دفع</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-hand-holding-usd"></i></span>
+                                    <h3>طلب سلفة</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-file-contract"></i></span>
+                                    <h3>انهاء خدمات</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-door-open"></i></span>
+                                    <h3>عذر</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-laptop"></i></span>
+                                    <h3>العمل عن بعد</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-bus-alt"></i></span>
+                                    <h3>طلب بدلات</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-frown"></i></span>
+                                    <h3>طلب تظلم</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-medical-fill" viewBox="0 0 16 16">
+                                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm-3 2v.634l.549-.317a.5.5 0 1 1 .5.866L7 7l.549.317a.5.5 0 1 1-.5.866L6.5 7.866V8.5a.5.5 0 0 1-1 0v-.634l-.549.317a.5.5 0 1 1-.5-.866L5 7l-.549-.317a.5.5 0 0 1 .5-.866l.549.317V5.5a.5.5 0 1 1 1 0zm-2 4.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zm0 2h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1z"/>
+                                      </svg></span>
+                                    <h3>طلب عام</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="far fa-id-card"></i></span>
+                                    <h3>تصريح زائر</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-plane-departure"></i></span>
+                                    <h3>سفر</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-luggage-cart"></i></span>
+                                    <h3>مطالبه سفر</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-file-invoice"></i></span>
+                                    <h3>طلب توضيح</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-file-export"></i></span>
+                                    <h3>طلب مغادرة</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-dollar-sign"></i></span>
+                                    <h3>تعويضات</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-user-clock"></i></span>
+                                    <h3>طلب عمل اضافى</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lege-service" id="lege-service-screen">
+                        <div class="row">
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-balance-scale-right"></i></span>
+                                    <h3>استشارة قانونية</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-copy"></i></span>
+                                    <h3>طلب صكوك قانونية</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-gavel"></i></span>
+                                    <h3>طلب تقاضى</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="strategic-service" id="strategic-service-screen">
+                        <div class="row">
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-chart-line"></i></span>
+                                    <h3>طلب دراسة السوق</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-handshake"></i></span>
+                                    <h3>طلب تحالف استراتيجى</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-envelope-open-text"></i></span>
+                                    <h3>طلب أستشارة</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="markting-service" id="markting-service-screen">
+                        <div class="row">
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-bullhorn"></i></span>
+                                    <h3>طلب تسويق</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-chalkboard"></i></span>
+                                    <h3>النماذج التسويقية</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="training-service" id="training-service-screen">
+                        <div class="row">
+                            <div class="col-sm-4 col-12">
+                                <div class="item">
+                                    <span><i class="fas fa-chalkboard-teacher"></i></span>
+                                    <h3>طلب دورة تدريبية</h3>
+                                    <h5>الخدمة متاحة</h5>
+                                    <div class="enter">
+                                        <a href="#">الدخول للخدمة</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end service -->
+            
+        
+
+
+        
+        <script src="/js/custom.js"></script>
+        <script>
+            
+        </script>
+    </body>
+</html>
